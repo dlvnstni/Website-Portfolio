@@ -1,0 +1,235 @@
+
+/* Custom Scrollbar */
+/* Mengatur style scrollbar khusus untuk browser berbasis WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Lebar scrollbar 10px */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Warna latar belakang track scrollbar (area di sekitar thumb) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Warna latar belakang thumb scrollbar */
+  border-radius: 5px; /* Memberikan sudut membulat pada thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Warna thumb scrollbar saat dihover */
+}
+
+/* Hero Section */
+/* Menata bagian hero (bagian utama di atas website) */
+.hero-section {
+  height: 100vh; /* Tinggi hero section setinggi viewport (tinggi layar) */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Gradien warna hitam semi-transparan */
+    url("/api/placeholder/1920/1080") center/cover; /* Gambar latar belakang, di tengah dan menutupi seluruh area */
+  display: flex; /* Mengatur elemen di dalam sebagai flexbox */
+  align-items: center; /* Menempatkan elemen di tengah secara vertikal */
+  color: white; /* Warna teks putih */
+}
+
+/* Animate on Scroll */
+/* Animasi elemen saat di-scroll */
+.animate-on-scroll {
+  opacity: 0; /* Awalnya tidak terlihat */
+  transform: translateY(20px); /* Awalnya berada di bawah 20px */
+  transition: all 0.5s ease-out; /* Transisi animasi selama 0.5 detik */
+}
+
+.animate-on-scroll.visible {
+  opacity: 1; /* Terlihat saat kelas 'visible' ditambahkan */
+  transform: translateY(0); /* Kembali ke posisi semula */
+}
+
+/* Project Cards */
+/* Menata kartu-kartu proyek */
+.project-card {
+  overflow: hidden; /* Mengatur agar isi tidak keluar dari batas kartu */
+  border: none; /* Tidak ada border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Bayangan pada kartu */
+  transition: all 0.3s ease; /* Transisi animasi selama 0.3 detik */
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Bergeser sedikit ke atas saat dihover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat saat dihover */
+}
+
+.project-card img {
+  transition: transform 0.5s; /* Transisi animasi untuk gambar */
+}
+
+.project-card:hover img {
+  transform: scale(1.1); /* Gambar diperbesar saat dihover */
+}
+
+/* Skill Bars */
+/* Menata progress bar keahlian */
+.skill-bar {
+  height: 12px; /* Tinggi progress bar */
+  background: #e9ecef; /* Warna latar belakang progress bar */
+  border-radius: 5px; /* Sudut membulat */
+  margin-bottom: 10px; /* Margin bawah untuk jarak antar progress bar */
+  overflow: hidden; /* Mengatur agar isi tidak keluar dari batas */
+}
+
+.skill-progress {
+  height: 100%; /* Tinggi sama dengan skill-bar */
+  border-radius: 5px; /* Sudut membulat */
+  background: #0d6efd; /* Warna progress bar */
+  width: 0; /* Lebar awal 0, akan berubah dengan JavaScript */
+  transition: width 1s ease; /* Transisi perubahan lebar selama 1 detik */
+  animation: progress-bar 1s forwards; /* Animasi progress bar (harus didefinisikan di tempat lain) */
+}
+
+.skill-progress i {
+  /* Icon di dalam progress bar */
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%); /* Memposisikan icon di tengah vertikal */
+  font-size: 1.2em;
+  color: white;
+}
+
+/* Add this to style the skill labels */
+/* Style untuk label keahlian */
+.skill-label {
+  display: flex;
+  align-items: center; /* Menyelaraskan icon dan teks secara vertikal */
+  margin-bottom: 5px; /* Jarak antar label */
+}
+
+.skill-label i {
+  margin-right: 5px; /* Jarak antara icon dan teks */
+}
+
+
+/* Blog Cards */
+/* Menata kartu-kartu blog */
+.blog-card {
+  transition: transform 0.3s; /* Transisi animasi */
+}
+
+.blog-card:hover {
+  transform: translateY(-5px); /* Bergeser sedikit ke atas saat dihover */
+}
+
+/* Social Icons */
+/* Menata ikon media sosial */
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex; /* Mengatur sebagai flexbox */
+  align-items: center; /* Menempatkan elemen di tengah vertikal */
+  justify-content: center; /* Menempatkan elemen di tengah horizontal */
+  border-radius: 50%; /* Ikon berbentuk lingkaran */
+  background: #f8f9fa; /* Warna latar belakang */
+  color: #333; /* Warna teks */
+  margin: 0 5px; /* Jarak antar ikon */
+  transition: all 0.3s; /* Transisi animasi */
+}
+
+.social-icons a:hover {
+  background: #0d6efd; /* Warna latar belakang saat dihover */
+  color: white; /* Warna teks saat dihover */
+  transform: translateY(-3px); /* Bergeser sedikit ke atas saat dihover */
+}
+
+/* Navigation */
+/* Menata navigasi website */
+.navbar {
+  transition: all 0.3s; /* Transisi animasi */
+}
+
+.navbar.scrolled {
+  /* Style navbar saat di-scroll */
+  background: white !important; /* Warna latar belakang putih */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+.nav-link {
+  position: relative; /* Untuk menambahkan elemen setelah link */
+}
+
+.nav-link::after {
+  /* Garis bawah pada link */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0; /* Lebar awal 0 */
+  height: 2px;
+  background: #0d6efd; /* Warna garis bawah */
+  transition: all 0.3s; /* Transisi animasi */
+  transform: translateX(-50%); /* Memposisikan garis bawah di tengah */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Lebar penuh saat dihover */
+}
+
+/* Filter Buttons */
+/* Menata tombol filter */
+.filter-btn {
+  border: none; /* Tanpa border */
+  padding: 8px 20px;
+  margin: 5px;
+  border-radius: 20px; /* Sudut membulat */
+  transition: all 0.3s; /* Transisi animasi */
+}
+
+.filter-btn.active {
+  /* Style tombol filter saat aktif */
+  background: #0d6efd; /* Warna latar belakang */
+  color: white; /* Warna teks */
+}
+
+/* Custom Modal */
+/* Menata modal (kotak dialog) */
+.modal-content {
+  border: none; /* Tanpa border */
+  border-radius: 15px; /* Sudut membulat */
+}
+
+/* Timeline */
+/* Menata timeline */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  /* Garis vertikal pada timeline */
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  top: 70px;
+  height: 100%;
+  background: #6cc1f3; /* Warna garis */
+}
+
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+  transition: transform 0.3s ease; /* Transisi animasi */
+}
+
+.timeline-item:hover {
+  transform: scale(1.03); /* Zoom sedikit saat dihover */
+}
+
+.timeline-content {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease; /* Transisi animasi untuk bayangan */
+}
+
+.timeline-item:hover .timeline-content {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat saat dihover */
+}
